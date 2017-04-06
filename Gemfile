@@ -5,4 +5,5 @@ gemspec
 group :development, :test do
   gem 'gemfury'
   gem 'minitest'
+  gem 'rake'
 end
