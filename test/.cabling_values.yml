@@ -1,0 +1,9 @@
+# Comments are ok in this file.
+#
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+
+blog:
+  'db.password': <%= 'password' %>

@@ -1,0 +1,10 @@
+auth:
+  require_2fa: true
+  twitter_auth: true
+
+database:
+  adapter: mysql
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: password

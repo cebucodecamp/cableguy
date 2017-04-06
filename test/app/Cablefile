@@ -1,0 +1,10 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+cabling do |cabler, cablefile, target|
+  cabler.set_app_group :blog
+
+  setup :mkdir, 'config/secrets'
+
+  setup :template, 'blog.yml'
+end

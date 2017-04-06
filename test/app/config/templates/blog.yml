@@ -1,0 +1,10 @@
+auth:
+  require_2fa: {require_2fa}
+  twitter_auth: {twitter_auth}
+
+database:
+  adapter: mysql
+  host: {db.host}
+  port: {db.port}
+  username: {db.username}
+  password: {db.password}
