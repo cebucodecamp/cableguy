@@ -3,7 +3,7 @@ require 'palmade/cableguy/version'
 
 require 'bundler/gem_tasks'
 require 'rake/testtask'
-require 'minitest'
+require 'gemfury/tasks'
 
 Rake::TestTask.new do |t|
   t.libs << %w(test lib)
@@ -12,12 +12,7 @@ end
 
 task :default => :test
 
-FURY_USERNAME = 'cebucodecamp'
-
-desc 'Build gem and push to gem repo to staging (repo.fury.io/cebucodecamp)'
-task :build_and_stage => [ :build ] do
-  gem_path = File.expand_path('../pkg/cableguy-%s.gem' % Palmade::Cableguy::VERSION, __FILE__)
-  cmd = 'bundle exec fury push --as=%s %s' % [ FURY_USERNAME, gem_path ]
-
-  puts cmd; system(cmd); puts "\n"
+desc "Perform gem build and push to Gemfury as 'nlevel'"
+task :fury_release do
+  Rake::Task['fury:release'].invoke(nil, 'cebucodecamp')
 end
