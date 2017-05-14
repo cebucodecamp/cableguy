@@ -138,7 +138,8 @@ module Palmade::Cableguy
       end
 
       if @db.empty?
-        raise 'Empty config data from [%s], did you provide some cabling data?' % @cabling_path
+        cabling_paths = determine_useable_cabling_paths
+        warn 'WARN: Empty config data from %s, did you provide some cabling data?' % cabling_paths.inspect
       end
 
       if @cablefile.configured?
